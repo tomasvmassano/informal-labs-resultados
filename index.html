@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informal Labs · Resultados</title>
+<meta name="description" content="Os testemunhos e os números das contas que gerimos. Para ver antes da nossa conversa.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Informal Labs · Resultados">
+<meta property="og:description" content="O nosso trabalho, em números. Testemunhos e resultados de clientes em Meta Ads e Google Ads.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://resultados.informallabs.com/assets/og.jpg">
+<meta property="og:url" content="https://resultados.informallabs.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.jpg">
+<link rel="apple-touch-icon" href="assets/webclip.png">
+<link rel="preload" href="assets/fonts/Degular-Medium.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/STIXGeneralItalic.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preconnect" href="https://i.vimeocdn.com">
+<!--
+  ══════════════════════════════════════════════════════════════
+  INFORMAL LABS · PÁGINA DE RESULTADOS (envio a leads / pré-reunião)
+  · Testemunhos: cada .video-slot tem data-vimeo-id + data-thumb.
+    Para acrescentar, duplica um slot e troca o ID e a miniatura
+    (https://vimeo.com/api/oembed.json?url=https://vimeo.com/ID&width=640).
+    Vídeo horizontal, acrescenta class="landscape" ao slot.
+  · Link de marcação: procura CAL_URL (aparece 3 vezes).
+  ══════════════════════════════════════════════════════════════
+-->
+<style>
+  @font-face{font-family:'Degular';src:url('assets/fonts/Degular-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+  @font-face{font-family:'Degular';src:url('assets/fonts/Degular-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+  @font-face{font-family:'Degular';src:url('assets/fonts/Degular-Semibold.otf') format('opentype');font-weight:600;font-display:swap}
+  @font-face{font-family:'Stix General';src:url('assets/fonts/STIXGeneralItalic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('assets/fonts/Satoshi-Regular.otf') format('opentype');font-weight:400;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('assets/fonts/Satoshi-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+  @font-face{font-family:'Satoshi';src:url('assets/fonts/Satoshi-Bold.otf') format('opentype');font-weight:700;font-display:swap}
+
+  :root{
+    /* Paleta do site informallabs.com */
+    --black:#000000;
+    --ink:#0F1010;
+    --elev:#191817;
+    --white:#FCFCFC;
+    --peach:#FAEBE3;
+    --peach-deep:#F0DFD5;
+    --orange:#D96242;
+    --grey:#767676;
+    --w08:rgba(252,252,252,.08);
+    --w14:rgba(252,252,252,.14);
+    --w40:rgba(252,252,252,.42);
+    --w64:rgba(252,252,252,.64);
+    --b08:rgba(0,0,0,.08);
+    --b14:rgba(0,0,0,.14);
+    --b60:rgba(0,0,0,.60);
+    --container:1272px;
+    --container-md:760px;
+    --radius:16px;
+    --radius-sm:12px;
+    --ease:cubic-bezier(.25,.46,.45,.94);
+    --ease-out:cubic-bezier(.16,1,.3,1);
+    --display:'Degular',Impact,sans-serif;
+    --serif:'Stix General',Georgia,serif;
+    --body:'Satoshi',system-ui,-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.03em}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .container-md{max-width:var(--container-md);margin:0 auto;padding:0 24px}
+
+  /* ── Header ───────────────────────────── */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(0,0,0,.86);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s var(--ease);
+  }
+  header.scrolled{border-bottom-color:var(--w08)}
+  header .container{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+  header .brand img{height:28px;width:auto}
+  .header-right{display:flex;align-items:center;gap:24px}
+  .header-tag{font-family:var(--body);font-size:13px;font-weight:500;color:var(--w64);letter-spacing:.12em;text-transform:uppercase}
+
+  /* ── Botões ───────────────────────────── */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--display);font-size:18px;font-weight:500;line-height:1;
+    text-decoration:none;white-space:nowrap;
+    border-radius:var(--radius-sm);
+    padding:16px 24px;
+    transition:transform .25s var(--ease),background-color .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
+  }
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:16px;height:16px;flex:none;transition:transform .25s var(--ease)}
+  .btn:hover svg{transform:translateX(3px)}
+  .btn-primary{background:var(--white);color:var(--black)}
+  .btn-primary:hover{background:var(--peach)}
+  .btn-ghost{border:1px solid var(--w14);color:var(--white)}
+  .btn-ghost:hover{border-color:var(--w40)}
+  .btn-sm{font-size:16px;padding:12px 18px}
+  .btn-dark{background:var(--black);color:var(--white)}
+  .btn-dark:hover{background:#262626}
+
+  /* ── Tipografia ───────────────────────── */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--w64);
+    border:1px solid var(--w14);border-radius:999px;
+    padding:8px 18px;margin-bottom:32px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+  h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.015em}
+  h1{font-size:clamp(54px,9.6vw,136px);line-height:.98}
+  h2{font-size:clamp(42px,6.4vw,84px);line-height:1}
+  h3{font-size:clamp(34px,4.6vw,60px);line-height:1.02}
+  .lead{font-size:clamp(17px,1.7vw,20px);color:var(--w64);max-width:620px;margin-top:28px}
+
+  /* ── Hero ─────────────────────────────── */
+  .hero{padding:132px 0 40px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:104px}
+  .metric{border:1px solid var(--w14);border-radius:var(--radius);padding:32px;background:linear-gradient(180deg,rgba(252,252,252,.03),rgba(252,252,252,0))}
+  .metric .value{font-family:var(--display);font-size:clamp(46px,5.4vw,72px);font-weight:500;line-height:1;letter-spacing:-.02em}
+  .metric .label{font-size:15px;color:var(--w64);margin-top:14px;max-width:240px}
+
+  /* ── Marcas ───────────────────────────── */
+  .brands{padding:112px 0 0}
+  .brands-title{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w40);text-align:center;margin-bottom:28px}
+  .marquee{
+    position:relative;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+  .marquee-track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track img{height:84px;width:126px;object-fit:contain;margin:0 22px;opacity:.72;transition:opacity .3s var(--ease)}
+  .marquee-track img:hover{opacity:1}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* ── Testemunhos ──────────────────────── */
+  section{padding:168px 0 40px}
+  .videos{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:64px}
+  .video-slot{
+    position:relative;aspect-ratio:9/16;
+    border:1px solid var(--w14);border-radius:var(--radius);
+    overflow:hidden;background:var(--elev);
+    transition:border-color .3s var(--ease);
+    isolation:isolate;
+  }
+  .video-slot.landscape{grid-column:1 / -1;aspect-ratio:16/9;max-width:840px;width:100%;justify-self:center}
+  .video-slot:hover{border-color:var(--w40)}
+  .video-slot button{
+    all:unset;position:absolute;inset:0;cursor:pointer;display:block;
+  }
+  .video-slot button:focus-visible{outline:2px solid var(--orange);outline-offset:-2px;border-radius:var(--radius)}
+  .video-slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease-out),filter .4s var(--ease)}
+  .video-slot:hover .poster{transform:scale(1.03)}
+  .video-slot .play{
+    position:absolute;left:16px;top:16px;
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(0,0,0,.45);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.28);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .3s var(--ease),background-color .3s var(--ease);
+  }
+  .video-slot:hover .play{transform:scale(1.08);background:var(--white)}
+  .video-slot .play::after{content:"";margin-left:3px;border-left:11px solid var(--white);border-top:7px solid transparent;border-bottom:7px solid transparent;transition:border-color .3s var(--ease)}
+  .video-slot:hover .play::after{border-left-color:var(--black)}
+  .video-slot .dur{position:absolute;right:14px;top:14px;font-size:12px;font-weight:500;letter-spacing:.04em;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.5);color:var(--white)}
+  .video-slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* ── Casos (bloco claro) ──────────────── */
+  .light{background:var(--white);color:var(--black);padding:168px 0 96px;border-radius:32px 32px 0 0;margin-top:136px}
+  .light .eyebrow{color:var(--b60);border-color:var(--b14)}
+  .light .lead{color:var(--b60)}
+  .featured{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px}
+  .case{
+    border:1px solid var(--b14);border-radius:var(--radius);
+    padding:36px;background:var(--white);
+    display:flex;flex-direction:column;gap:22px;
+    transition:border-color .3s var(--ease),transform .4s var(--ease-out);
+  }
+  .case:hover{border-color:rgba(0,0,0,.28)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:13px;font-weight:500;border:1px solid var(--b14);border-radius:999px;padding:6px 14px;letter-spacing:.02em}
+  .client{display:inline-block;align-self:flex-start;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--black);border-radius:999px;padding:7px 16px}
+  .headline{font-family:var(--display);font-size:clamp(38px,4.6vw,60px);font-weight:500;line-height:.98;letter-spacing:-.02em}
+  .context{font-size:16px;color:var(--b60);max-width:600px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 16px;border-top:1px solid var(--b14);padding-top:24px;margin-top:auto}
+  .stat .v{font-family:var(--display);font-size:24px;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  .stat .l{font-size:14px;color:var(--b60);margin-top:4px}
+
+  /* Lista final */
+  .strip{margin-top:16px;border:1px solid var(--b14);border-radius:var(--radius);overflow:hidden}
+  .strip-row{display:grid;grid-template-columns:1.1fr .9fr auto;gap:16px;align-items:center;padding:22px 36px;border-bottom:1px solid var(--b14);transition:background-color .25s var(--ease)}
+  .strip-row:hover{background:rgba(250,235,227,.45)}
+  .strip-row:last-child{border-bottom:0}
+  .strip-row .c{justify-self:start;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--black);border-radius:999px;padding:7px 16px}
+  .strip-row .s{font-size:15px;color:var(--b60)}
+  .strip-row .n{font-family:var(--display);font-size:24px;font-weight:600;text-align:right;white-space:nowrap}
+
+  /* ── Fecho ────────────────────────────── */
+  .closing{background:var(--white);color:var(--black);padding:40px 0 120px}
+  .closing-card{
+    position:relative;overflow:hidden;
+    background:var(--black);color:var(--white);
+    border-radius:28px;padding:112px 40px;text-align:center;
+  }
+  .closing-card::before{
+    content:"";position:absolute;width:720px;height:720px;left:50%;top:-460px;transform:translateX(-50%);
+    background:radial-gradient(closest-side,rgba(217,98,66,.38),rgba(217,98,66,0));
+    pointer-events:none;
+  }
+  .closing-card > *{position:relative}
+  .closing-card img{height:30px;width:auto;margin:0 auto 44px;opacity:.95}
+  .closing-card p{color:var(--w64);margin:22px auto 0;max-width:520px}
+  .closing-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+  .contact-line{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;margin-top:36px;font-size:15px;color:var(--w64)}
+  .contact-line a{text-decoration:none;border-bottom:1px solid var(--w14);padding-bottom:2px;transition:color .2s var(--ease),border-color .2s var(--ease)}
+  .contact-line a:hover{color:var(--white);border-color:var(--w64)}
+
+  footer{background:var(--white);color:var(--black);border-top:1px solid var(--b08);padding:36px 0 48px}
+  footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  footer img{height:22px;width:auto}
+  footer span,footer a{font-size:14px;color:rgba(0,0,0,.5);text-decoration:none}
+  footer a:hover{color:var(--black)}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+
+  /* ── Botão flutuante (mobile) ─────────── */
+  .float-cta{display:none}
+
+  /* ── Animações ────────────────────────── */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none}
+  .no-js .reveal{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
+    .marquee-track img[aria-hidden]{display:none}
+    .marquee{-webkit-mask-image:none;mask-image:none}
+  }
+
+  /* ── Responsivo ───────────────────────── */
+  @media (max-width:1100px){
+    .videos{grid-template-columns:repeat(4,1fr)}
+  }
+  @media (max-width:900px){
+    .videos{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:767px){
+    body{font-size:16px}
+    header .container{height:64px}
+    header .brand img{height:24px}
+    .header-tag{display:none}
+    .hero{padding:80px 0 24px}
+    .metrics{grid-template-columns:1fr;gap:12px;margin-top:64px}
+    .metric{padding:24px 24px 26px}
+    .brands{padding:88px 0 0}
+    .marquee-track img{height:64px;width:96px;margin:0 14px}
+    section{padding:120px 0 24px}
+    .videos{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:44px}
+    .video-slot .play{width:38px;height:38px;left:12px;top:12px}
+    .light{padding:112px 0 64px;margin-top:104px;border-radius:24px 24px 0 0}
+    .featured{grid-template-columns:1fr;margin-top:44px;gap:12px}
+    .case{padding:26px 22px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .strip-row{grid-template-columns:1fr;gap:6px;padding:20px 22px}
+    .strip-row .n{text-align:left}
+    .closing{padding:24px 0 80px}
+    .closing-card{padding:80px 22px;border-radius:24px}
+    .btn{width:100%}
+    .hero-ctas .btn,.closing-ctas .btn{width:100%}
+    header .btn{width:auto}
+    footer .container{flex-direction:column;align-items:flex-start}
+    .float-cta{
+      display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:60;width:auto;
+      border:1px solid rgba(0,0,0,.12);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      transform:translateY(140%);transition:transform .45s var(--ease-out);
+    }
+    .float-cta.show{transform:none}
+    .float-cta.on-light{background:var(--black);color:var(--white);border-color:var(--black)}
+  }
+</style>
+</head>
+<body class="no-js">
+
+<header id="top">
+  <div class="container">
+    <a class="brand" href="https://www.informallabs.com" target="_blank" rel="noopener" aria-label="Informal Labs">
+      <img src="assets/logo-white.png" alt="Informal Labs" width="400" height="90">
+    </a>
+    <div class="header-right">
+      <span class="header-tag">Resultados</span>
+      <a class="btn btn-primary btn-sm" href="https://calendar.app.google/W2bGcvoLUGYVpjY57" target="_blank" rel="noopener" data-cal>Marcar reunião</a><!-- CAL_URL -->
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="container">
+    <h1 class="reveal">O nosso trabalho,<br>em <span class="serif">números.</span></h1>
+    <p class="lead reveal">Antes de falarmos, queremos que veja o que já construímos. Os testemunhos de quem trabalha connosco e os números reais das contas que gerimos.</p>
+    <div class="hero-ctas reveal">
+      <a class="btn btn-primary" href="https://calendar.app.google/W2bGcvoLUGYVpjY57" target="_blank" rel="noopener" data-cal>Marcar reunião <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><!-- CAL_URL -->
+      <a class="btn btn-ghost" href="#resultados">Ver resultados</a>
+    </div>
+
+    <div class="metrics">
+      <div class="metric reveal">
+        <div class="value">+5 anos</div>
+        <div class="label">no mercado de tráfego pago e conteúdo</div>
+      </div>
+      <div class="metric reveal">
+        <div class="value">+600.000€</div>
+        <div class="label">investidos em publicidade paga, geridos por nós</div>
+      </div>
+      <div class="metric reveal">
+        <div class="value">+55</div>
+        <div class="label">negócios geridos em Meta e Google Ads</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MARCAS ══ -->
+<div class="brands">
+  <div class="container">
+    <p class="brands-title reveal">Marcas que já confiaram em nós</p>
+  </div>
+  <div class="marquee reveal" aria-label="Marcas com quem trabalhámos">
+    <div class="marquee-track">
+      <img src="assets/logos/DELTA_Logo-01.svg" alt="Delta Cafés">
+      <img src="assets/logos/GENESIS_Logo-01.svg" alt="Genesis">
+      <img src="assets/logos/TUMI_Logo-01.svg" alt="TUMI">
+      <img src="assets/logos/Sonae.png" alt="Sonae">
+      <img src="assets/logos/VOLVO_Logo-13.svg" alt="Volvo">
+      <img src="assets/logos/RENAULT_Logo-01.svg" alt="Renault">
+      <img src="assets/logos/PLAY_Logo.svg" alt="Prémios Play">
+      <img src="assets/logos/Client_Logo-02.svg" alt="Universo">
+      <img src="assets/logos/FF_Logo-01.svg" alt="Fitness Factory">
+      <img src="assets/logos/AD_Logo-01.svg" alt="AD">
+      <!-- duplicado para o loop contínuo -->
+      <img src="assets/logos/DELTA_Logo-01.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/GENESIS_Logo-01.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/TUMI_Logo-01.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/Sonae.png" alt="" aria-hidden="true">
+      <img src="assets/logos/VOLVO_Logo-13.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/RENAULT_Logo-01.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/PLAY_Logo.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/Client_Logo-02.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/FF_Logo-01.svg" alt="" aria-hidden="true">
+      <img src="assets/logos/AD_Logo-01.svg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</div>
+
+<!-- ══ TESTEMUNHOS ══ -->
+<section>
+  <div class="container">
+    <div class="eyebrow reveal">Testemunhos</div>
+    <h2 class="reveal">O que os clientes <span class="serif">dizem.</span></h2>
+    <p class="lead reveal">Nas palavras deles.</p>
+
+    <div class="videos">
+      <div class="video-slot reveal" data-vimeo-id="1171033027" data-dur="0:56" data-thumb="https://i.vimeocdn.com/video/2130392475-f65d8b1c51579dfcf7b8e586ffababc685b0a5f0c708e94137fe21421aebfe66-d_640" data-label="Pedro Sá, Delta Cafés"></div>
+      <div class="video-slot reveal" data-vimeo-id="1211790060" data-dur="0:41" data-thumb="https://i.vimeocdn.com/video/2182048454-647b37c594ae99913191d68b273feaa2026827afcbdbdbf1c52b30be1d2a7a5d-d_640" data-label="Alexandre Nunes, Farmácia Verde"></div>
+      <div class="video-slot reveal" data-vimeo-id="1171033724" data-dur="0:45" data-thumb="https://i.vimeocdn.com/video/2130391963-4e8705445b9418983b7c71170e7d77534fe43f5e10b79b477f7e9dc1ddc47ed7-d_640" data-label="Sylvia Cardim de Melo, Strawberry Brand Studio"></div>
+      <div class="video-slot reveal" data-vimeo-id="1211790063" data-dur="0:24" data-thumb="https://i.vimeocdn.com/video/2182048486-0542e8f77a174c75fb85a3ad8cb3bc3b88decb8b5b34ff4b1a5a988a21501f52-d_640" data-label="Luís Bastos e Silva, Renault e Dacia"></div>
+      <div class="video-slot reveal" data-vimeo-id="1171034790" data-dur="0:44" data-thumb="https://i.vimeocdn.com/video/2130392341-e06d8848cafa97e45d44daa6d32740de0dcc2bea76dadc7010c317eeafea536e-d_640" data-label="Sérgio Vizinha, Zamilita Imobiliária"></div>
+      <div class="video-slot reveal" data-vimeo-id="1211790061" data-dur="0:57" data-thumb="https://i.vimeocdn.com/video/2182048453-83e8318351029a1c54fa634df542565b2934feaf1df4cfc8f331baee01fc8184-d_640" data-label="Pietro Zancuoghi, Scale Labs"></div>
+      <div class="video-slot reveal" data-vimeo-id="1215851454" data-dur="0:39" data-thumb="https://i.vimeocdn.com/video/2187130821-7ae50ce4d76cd2b222e11c086e4d07fc60f943a221ff6b44de5c712561c1ad62-d_640" data-label="Natércia, Workmoove"></div>
+      <div class="video-slot reveal" data-vimeo-id="1211790095" data-dur="0:33" data-thumb="https://i.vimeocdn.com/video/2182048500-2c8acecc99891029e135e956c750f14c915dcfb9f569a90b78887632c5b61d63-d_640" data-label="Tiago Gonçalves, Digital Solution"></div>
+      <div class="video-slot reveal" data-vimeo-id="1213377586" data-dur="0:26" data-thumb="https://i.vimeocdn.com/video/2184028934-1632a93025e63786476e56bdb632d700982eb83b8f31b30ae3853e0647acfcfd-d_640" data-label="Gonçalo Vizinha, investidor imobiliário"></div>
+      <div class="video-slot reveal" data-vimeo-id="1211790108" data-dur="0:21" data-thumb="https://i.vimeocdn.com/video/2182048479-7b65e28a54262ad753d0ca70a1c06bd51e05ac6cb4f5cf478f44b0eb04bdfd1a-d_640" data-label="Testemunho de cliente"></div>
+      <div class="video-slot landscape reveal" data-vimeo-id="1211790059" data-dur="1:04" data-thumb="https://i.vimeocdn.com/video/2182048443-82af8279b159ddc4d0d8c6e7d5fefc46e57a499f4978c3eb666fce65ef91369e-d_1280" data-label="João Sousa Ferreira, SFBA"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASOS (bloco claro) ══ -->
+<div class="light" id="resultados">
+  <div class="container">
+    <div class="eyebrow reveal">Meta Ads e Google Ads</div>
+    <h2 class="reveal">Resultados de alguns <span class="serif">clientes.</span></h2>
+    <p class="lead reveal">De hotelaria a e-commerce, eventos e serviços. Negócios diferentes, a mesma regra. Cada euro investido tem de voltar com retorno.</p>
+
+    <div class="featured">
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Hotelaria</span></div>
+        <div class="client">Shiadu Group</div>
+        <div class="headline">40,5x ROAS em reservas diretas</div>
+        <p class="context">Hotéis no Porto, Lisboa e Sevilha. Em dois meses, 153 reservas pagas no site do próprio hotel. O canal direto custou 2,5% do valor reservado, quando uma OTA cobra 15 a 18% de comissão.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">85.091€</div><div class="l">Valor em reservas</div></div>
+          <div class="stat"><div class="v">2.103€</div><div class="l">Investido</div></div>
+          <div class="stat"><div class="v">153</div><div class="l">Reservas pagas</div></div>
+          <div class="stat"><div class="v">13,74€</div><div class="l">Custo por reserva</div></div>
+          <div class="stat"><div class="v">556€</div><div class="l">Valor médio por reserva</div></div>
+          <div class="stat"><div class="v">2,5%</div><div class="l">Custo de distribuição</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Google Ads</span><span class="tag">E-commerce</span></div>
+        <div class="client">Farmácia Verde</div>
+        <div class="headline">3,9x ROAS, com a loja do zero</div>
+        <p class="context">Construímos a loja online de raiz. Logo no segundo mês a rodar Google Ads, faturámos 12.089€, com a taxa de conversão a multiplicar por 8x e a ultrapassar o tráfego orgânico.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">12.089€</div><div class="l">Faturados no 2º mês</div></div>
+          <div class="stat"><div class="v">3.098€</div><div class="l">Investido</div></div>
+          <div class="stat"><div class="v">306</div><div class="l">Compras</div></div>
+          <div class="stat"><div class="v">3,21%</div><div class="l">Taxa de conversão</div></div>
+          <div class="stat"><div class="v">38€</div><div class="l">Ticket médio</div></div>
+          <div class="stat"><div class="v">8x</div><div class="l">Conversão vs orgânico</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Eventos</span></div>
+        <div class="client">MAD PRG Events</div>
+        <div class="headline">22.945€ em 15 dias</div>
+        <p class="context">Venda de bilhetes com ~450€/dia de investimento. Com margem de ~40%, 9.178€ de receita líquida atribuível aos anúncios.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">353</div><div class="l">Bilhetes vendidos</div></div>
+          <div class="stat"><div class="v">65€</div><div class="l">Ticket médio</div></div>
+          <div class="stat"><div class="v">6.843€</div><div class="l">Investido</div></div>
+          <div class="stat"><div class="v">19.622</div><div class="l">Visitas via ads</div></div>
+          <div class="stat"><div class="v">434.811</div><div class="l">Alcance</div></div>
+          <div class="stat"><div class="v">~9.178€</div><div class="l">Receita líquida</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Google Ads</span><span class="tag">Reservas</span></div>
+        <div class="client">Check In Park</div>
+        <div class="headline">232 reservas num mês</div>
+        <p class="context">Campanha de reservas diretas, sem comissões de plataformas. A um ticket de 30€, o retorno foi de ~6.980€, mais do dobro do investido, no primeiro mês.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">12,68€</div><div class="l">Custo por reserva</div></div>
+          <div class="stat"><div class="v">2.951€</div><div class="l">Investido</div></div>
+          <div class="stat"><div class="v">300.907</div><div class="l">Impressões</div></div>
+          <div class="stat"><div class="v">4.706</div><div class="l">Cliques</div></div>
+          <div class="stat"><div class="v">1,56%</div><div class="l">CTR</div></div>
+          <div class="stat"><div class="v">~6.980€</div><div class="l">Retorno (&gt;2x)</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Google Ads</span><span class="tag">Serviços locais</span></div>
+        <div class="client">Glamour Piquetes</div>
+        <div class="headline">Custo por lead 4x menor</div>
+        <p class="context">Conta antes gerida internamente. Dobrámos as conversões com metade do investimento, de um mês para o outro.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">121 → 202</div><div class="l">Conversões</div></div>
+          <div class="stat"><div class="v">266 → 74€</div><div class="l">Custo por conversão</div></div>
+          <div class="stat"><div class="v">54%</div><div class="l">Menos investimento</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Hotelaria</span></div>
+        <div class="client">Sorraia Hotel</div>
+        <div class="headline">+5.337 seguidores em 4 meses</div>
+        <p class="context">Crescimento de marca e audiência construído com tráfego pago, com 293 mil visitas ao perfil de Instagram em 4 meses.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">293.431</div><div class="l">Visitas ao perfil IG</div></div>
+          <div class="stat"><div class="v">11.099</div><div class="l">Visitas ao site via ads</div></div>
+          <div class="stat"><div class="v">5.337</div><div class="l">Novos seguidores</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Geração de leads</span></div>
+        <div class="client">SW Places</div>
+        <div class="headline">990 leads a 3,11€</div>
+        <p class="context">Leads de formulário durante 10 meses seguidos, a um custo abaixo da média do setor.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">990</div><div class="l">Leads de formulário</div></div>
+          <div class="stat"><div class="v">3,11€</div><div class="l">Custo por lead</div></div>
+          <div class="stat"><div class="v">8,52%</div><div class="l">CTR</div></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Automóvel</span></div>
+        <div class="client">Seven Motors</div>
+        <div class="headline">2 a 3 carros vendidos por mês</div>
+        <p class="context">Montámos o funil de aquisição do stand. Todos os meses, ajudamos a vender pelo menos 2 a 3 carros.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">3.966€</div><div class="l">Investido desde janeiro</div></div>
+          <div class="stat"><div class="v">0,05€</div><div class="l">Custo por clique</div></div>
+          <div class="stat"><div class="v">2,33M</div><div class="l">Impressões</div></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="strip reveal">
+      <div class="strip-row">
+        <div class="c">Alma Portuguese Kitchen</div>
+        <div class="s">Restauração · Meta + Google</div>
+        <div class="n">132 reservas a 2,93€</div>
+      </div>
+      <div class="strip-row">
+        <div class="c">Meta Seguros</div>
+        <div class="s">Corretora de seguros · Meta Ads</div>
+        <div class="n">54 leads com 300€</div>
+      </div>
+      <div class="strip-row">
+        <div class="c">Zamilita</div>
+        <div class="s">Imobiliária · Meta + Google</div>
+        <div class="n">5 negócios com 257€</div>
+      </div>
+      <div class="strip-row">
+        <div class="c">Zome Expo</div>
+        <div class="s">Recrutamento · Meta Ads</div>
+        <div class="n">2 consultores no 1º mês</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FECHO ══ -->
+<div class="closing">
+  <div class="container">
+    <div class="closing-card reveal">
+      <img src="assets/logo-white.png" alt="Informal Labs" width="400" height="90">
+      <h3>O próximo caso pode ser <span class="serif">o seu.</span></h3>
+      <p>Uma conversa curta para percebermos o seu negócio e onde está o retorno. Traga as suas perguntas.</p>
+      <div class="closing-ctas">
+        <a class="btn btn-primary" href="https://calendar.app.google/W2bGcvoLUGYVpjY57" target="_blank" rel="noopener" data-cal>Marcar reunião <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><!-- CAL_URL -->
+        <a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=351918138151&amp;text=Ol%C3%A1!%20Vi%20a%20vossa%20p%C3%A1gina%20de%20resultados%20e%20gostava%20de%20falar%20convosco." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+      <div class="contact-line">
+        <a href="mailto:hello@informallabs.com">hello@informallabs.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <img src="assets/logo-black.png" alt="Informal Labs" width="400" height="90">
+    <div class="foot-links">
+      <a href="https://www.informallabs.com" target="_blank" rel="noopener">informallabs.com</a>
+      <a href="https://www.instagram.com/informallabs" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/informal-labs" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <span>©2026 Informal Labs. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<a class="btn btn-primary float-cta" href="https://calendar.app.google/W2bGcvoLUGYVpjY57" target="_blank" rel="noopener" data-cal>Marcar reunião <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<script>
+  document.body.classList.remove('no-js');
+
+  // Testemunhos: miniatura leve; o player do Vimeo só carrega ao clicar
+  document.querySelectorAll('.video-slot').forEach(function(slot){
+    var id = (slot.getAttribute('data-vimeo-id') || '').trim();
+    if(!/^[0-9]+$/.test(id)) return;
+    var label = slot.getAttribute('data-label') || 'Testemunho';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Ver testemunho de ' + label);
+    var img = document.createElement('img');
+    img.className = 'poster'; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+    img.src = slot.getAttribute('data-thumb') || ('https://vumbnail.com/' + id + '.jpg');
+    btn.appendChild(img);
+    var play = document.createElement('span'); play.className = 'play'; btn.appendChild(play);
+    var d = slot.getAttribute('data-dur');
+    if(d){ var s = document.createElement('span'); s.className = 'dur'; s.textContent = d; btn.appendChild(s); }
+    btn.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&dnt=1&title=0&byline=0&portrait=0&badge=0';
+      f.allow = 'autoplay; fullscreen; picture-in-picture';
+      f.title = label;
+      f.allowFullscreen = true;
+      slot.innerHTML = '';
+      slot.appendChild(f);
+    });
+    slot.appendChild(btn);
+  });
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Header com borda ao fazer scroll + CTA flutuante no mobile
+  var header = document.querySelector('header');
+  var floatCta = document.querySelector('.float-cta');
+  var hero = document.querySelector('.hero-ctas');
+  var closing = document.querySelector('.closing-ctas');
+  var light = document.querySelector('.light');
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+    var pastHero = hero.getBoundingClientRect().bottom < 0;
+    var atClosing = closing.getBoundingClientRect().top < window.innerHeight;
+    floatCta.classList.toggle('show', pastHero && !atClosing);
+    var lt = light.getBoundingClientRect();
+    floatCta.classList.toggle('on-light', lt.top < window.innerHeight - 40 && lt.bottom > window.innerHeight);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+</script>
+
+</body>
+</html>
