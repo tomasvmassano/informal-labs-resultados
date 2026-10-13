@@ -157,7 +157,7 @@ section{padding:168px 0 40px}
 .video-slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ── Casos (bloco claro) ──────────────── */
-.light{background:var(--white);color:var(--black);padding:168px 0 96px;border-radius:32px 32px 0 0;margin-top:136px}
+.light{background:var(--white);color:var(--black);padding:168px 0 120px;border-radius:32px;margin-top:136px}
 .light .eyebrow{color:var(--b60);border-color:var(--b14)}
 .light .lead{color:var(--b60)}
 .featured{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px}
@@ -187,10 +187,10 @@ section{padding:168px 0 40px}
 .strip-row .n{font-family:var(--display);font-size:24px;font-weight:600;text-align:right;white-space:nowrap}
 
 /* ── Fecho ────────────────────────────── */
-.closing{background:var(--white);color:var(--black);padding:40px 0 120px}
+.closing{background:var(--black);color:var(--white);padding:136px 0 120px}
 .closing-card{
   position:relative;overflow:hidden;
-  background:var(--black);color:var(--white);
+  background:var(--ink);color:var(--white);border:1px solid var(--w14);
   border-radius:28px;padding:112px 40px;text-align:center;
 }
 .closing-card::before{
@@ -206,11 +206,11 @@ section{padding:168px 0 40px}
 .contact-line a{text-decoration:none;border-bottom:1px solid var(--w14);padding-bottom:2px;transition:color .2s var(--ease),border-color .2s var(--ease)}
 .contact-line a:hover{color:var(--white);border-color:var(--w64)}
 
-footer{background:var(--white);color:var(--black);border-top:1px solid var(--b08);padding:36px 0 48px}
+footer{background:var(--black);color:var(--white);border-top:1px solid var(--w08);padding:36px 0 48px}
 footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 footer img{height:22px;width:auto}
-footer span,footer a{font-size:14px;color:rgba(0,0,0,.5);text-decoration:none}
-footer a:hover{color:var(--black)}
+footer span,footer a{font-size:14px;color:var(--w40);text-decoration:none}
+footer a:hover{color:var(--white)}
 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
 
 /* ── Botão flutuante (mobile) ─────────── */
@@ -249,13 +249,13 @@ footer a:hover{color:var(--black)}
   section{padding:120px 0 24px}
   .videos{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:44px}
   .video-slot .play{width:38px;height:38px;left:12px;top:12px}
-  .light{padding:112px 0 64px;margin-top:104px;border-radius:24px 24px 0 0}
+  .light{padding:112px 0 80px;margin-top:104px;border-radius:24px}
   .featured{grid-template-columns:1fr;margin-top:44px;gap:12px}
   .case{padding:26px 22px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .strip-row{grid-template-columns:1fr;gap:6px;padding:20px 22px}
   .strip-row .n{text-align:left}
-  .closing{padding:24px 0 80px}
+  .closing{padding:104px 0 80px}
   .closing-card{padding:80px 22px;border-radius:24px}
   .btn{width:100%}
   .hero-ctas .btn,.closing-ctas .btn{width:100%}
